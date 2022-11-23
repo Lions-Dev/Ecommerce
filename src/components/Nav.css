@@ -1,0 +1,24 @@
+#brand{
+    border-radius: 50%;
+}
+#brand-titulo{
+  margin-top: 1.7rem;
+}
+
+
+
+.navbar-nav-scroll::-webkit-scrollbar {
+  width: 0.6em;
+}
+.navbar-nav-scroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+.navbar-nav-scroll::-webkit-scrollbar-thumb {
+  background-color: #0d6efd
+}
+
+@media  (max-width: 370px) {
+  #brand-titulo{
+    display: none;
+  }
+}  

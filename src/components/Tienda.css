@@ -1,0 +1,80 @@
+.row{
+    --bs-gutter-x: 0
+}
+
+.Card{
+    max-width: 20rem;
+}
+.CardImg{
+    height: 13rem;
+}
+
+@media  (max-width: 1115px) {
+    .Card{
+        max-width: 15rem;
+    }  
+}
+@media  (max-width: 970px) {
+    .Card{
+        max-width: 11rem;
+    }  
+}
+@media  (min-width: 571px) {
+    #dropdown, #filtro{
+        display: none;
+    }
+}
+@media  (max-width: 570px) {
+    #ListGroupJson{
+        display: none;
+    }
+    .Card{
+        max-width: 13rem;
+    }  
+}
+@media  (max-width: 480px) {
+    .Card{
+        max-width: 10rem;
+    }  
+}
+@media  (max-width: 370px) {
+    .Card{
+        max-width: 8rem;
+    }  
+}   
+
+.input-group-text{
+    border: none;
+    background-color: white;
+    margin-top: -1.2rem;
+}
+
+.list-group-item{
+    border: none;
+    display: flex;
+    padding: 0;
+}
+
+#filtro{
+    padding-inline: 3.5rem;
+}
+#dropdown{
+    padding-inline: 0.7rem;
+}
+
+.scroll{
+    overflow-y: scroll;
+    height: 120px;
+}
+
+.scroll::-webkit-scrollbar {
+    width: 0.6em;
+  }
+   
+  .scroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  .scroll::-webkit-scrollbar-thumb {
+    background-color: #0d6efd
+  }

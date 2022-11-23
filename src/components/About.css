@@ -1,0 +1,35 @@
+#backgroundAbout{
+    background-image: url("../img/backgroudZapatillas.jpg");
+    height: 500px;
+    width: 60%;
+    background-position: center;
+}
+#pAbout{
+    margin-top: 30%;
+    margin-left: 10%;
+}
+iframe{
+    width: 91%;
+    height: 550px;    
+}
+#containerDatos{
+    margin-top: 3rem;
+
+}
+
+@media  (max-width: 992px) {
+    #backgroundAbout{
+        width: 100%;
+    }
+    iframe{
+        width: 99%;
+        height: 350px;
+    }
+    #pAbout{
+        margin-top: 10%;
+        margin-left: 5%;
+    }  
+}
+#spanAbout{
+    color: white;
+}
