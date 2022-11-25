@@ -38,6 +38,9 @@ function NavbarBar() {
             <Nav.Link as={Link} to="/About">
               About Us
             </Nav.Link>
+            <Nav.Link as={Link} to="/Contact">
+              Contact Us
+            </Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control

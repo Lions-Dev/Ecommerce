@@ -15,7 +15,13 @@ function Tienda() {
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
+  const [check, setCheck] = useState(false)
+  const handleCheckIn = () => setCheck(true);
+  const handleCheckOut = () => setCheck(false);
+
+
   return (
+    
     <div className="tienda">
       <Modal
         centered

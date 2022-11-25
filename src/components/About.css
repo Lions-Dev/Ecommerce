@@ -10,14 +10,13 @@
 }
 iframe{
     width: 91%;
-    height: 550px;    
+    height: 300px;    
 }
 #containerDatos{
     margin-top: 3rem;
-
-
-
-    
+}
+span{
+    color: #0d6efd;
 }
 
 @media  (max-width: 992px) {
@@ -25,7 +24,7 @@ iframe{
         width: 100%;
     }
     iframe{
-        width: 99%;
+        width: 90%;
         height: 350px;
     }
     #pAbout{
