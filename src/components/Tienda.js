@@ -4,10 +4,10 @@ import { Row, Col } from "react-bootstrap";
 import ListGroup from "react-bootstrap/ListGroup";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 import Dropdown from "react-bootstrap/Dropdown";
 import { CardsJson, ListGroupJson } from "../json";
 import "./Tienda.css";
+import {Modal1} from "./Modal"
 
 function Tienda() {
     
@@ -18,46 +18,10 @@ function Tienda() {
   const [check, setCheck] = useState(false)
   const handleCheckIn = () => setCheck(true);
   const handleCheckOut = () => setCheck(false);
-
-
   return (
     
     <div className="tienda">
-      <Modal
-        centered
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {Object.entries(ListGroupJson).map((e) => (
-            <ListGroup key={e[0]}>
-              <ListGroup.Item>
-                <h5>{Object.keys(e[1])}</h5>
-              </ListGroup.Item>
-              <div className="scroll">
-                {Object.values(e[1])[0].map((e) => (
-                  <ListGroup.Item key={e} class="d-flex">
-                    <InputGroup.Checkbox aria-label="Checkbox for following text input" />
-                    <p>{e}</p>
-                  </ListGroup.Item>
-                ))}
-              </div>
-            </ListGroup>
-          ))}
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Cancelar
-          </Button>
-          <Button variant="primary">Aceptar</Button>
-        </Modal.Footer>
-      </Modal>
-
+    <Modal1 /> 
       {/* botones de filtro y ordenado */}
       <Row className="mt-5">
         <Col className="d-flex justify-content-center">
@@ -88,8 +52,8 @@ function Tienda() {
                     <h5>{Object.keys(e[1])}</h5>
                   </ListGroup.Item>
                   <div className="scroll">
-                    {Object.values(e[1])[0].map((e) => (
-                      <ListGroup.Item key={e} class="d-flex">
+                    {Object.values(e[1])[0].map((e,id) => (
+                      <ListGroup.Item key={id} className="d-flex">
                         <InputGroup.Checkbox aria-label="Checkbox for following text input" />
                         <p>{e}</p>
                       </ListGroup.Item>
