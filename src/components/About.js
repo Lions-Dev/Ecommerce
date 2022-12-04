@@ -27,7 +27,7 @@ function About() {
       </Row>
       <Row className="mt-5">
         <Col lg={7} className="d-flex justify-content-center">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13146.056142460124!2d-58.56581055184656!3d-34.54053822522524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcba0895eab743%3A0x7f5d6b6bf3279359!2sH%C3%B6lters%20Schule!5e0!3m2!1ses!2sar!4v1669404519964!5m2!1ses!2sar" title="maps"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13146.056142460124!2d-58.56581055184656!3d-34.54053822522524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcba0895eab743%3A0x7f5d6b6bf3279359!2sH%C3%B6lters%20Schule!5e0!3m2!1ses!2sar!4v1669404519964!5m2!1ses!2sar" title="maps"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           
         </Col>
         <Col lg={5} className="d-flex justify-content-center">

@@ -1,6 +1,13 @@
 import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import InputGroup from "react-bootstrap/InputGroup";
+import ListGroup from "react-bootstrap/ListGroup";
+import { ListGroupJson } from "../json";
 
-function Modal1() {
+function ModalTienda({ show, handleClose }) {
+
+
+
     return (
         <Modal
             centered
@@ -13,14 +20,14 @@ function Modal1() {
                 <Modal.Title>Modal title</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                {Object.entries(ListGroupJson).map((e) => (
-                    <ListGroup key={e[0]}>
+                {Object.entries(ListGroupJson).map((e, key) => (
+                    <ListGroup key={key}>
                         <ListGroup.Item>
                             <h5>{Object.keys(e[1])}</h5>
                         </ListGroup.Item>
                         <div className="scroll">
-                            {Object.values(e[1])[0].map((e) => (
-                                <ListGroup.Item key={e} className="d-flex">
+                            {Object.values(e[1])[0].map((e, key) => (
+                                <ListGroup.Item key={key} className="d-flex">
                                     <InputGroup.Checkbox aria-label="Checkbox for following text input" />
                                     <p>{e}</p>
                                 </ListGroup.Item>
@@ -39,4 +46,4 @@ function Modal1() {
     )
 }
 
-export default Modal1
+export default ModalTienda
