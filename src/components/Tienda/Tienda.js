@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Row, Col } from "react-bootstrap";
-import { CardsJson, ListGroupJson } from "../json";
+import { CardsJson, ListGroupJson } from "../../data/json";
 import "./Tienda.css";
 import ModalTienda from "./ModalTienda";
 import FiltrarButton from "./FiltrarButton";
@@ -14,14 +14,11 @@ function Tienda() {
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
-  const [check, setCheck] = useState(false)
-  const handleCheckIn = () => setCheck(true);
-  const handleCheckOut = () => setCheck(false);
   return (
 
     <div className="tienda">
       {/* Modal */}
-      <ModalTienda show={show} handleClose={handleClose} />
+      <ModalTienda show={show} handleClose={handleClose} ListGroupJson={ListGroupJson} />
       {/* Botones de filtro y ordenado */}
       <Row className="mt-5">
         <Col className="d-flex justify-content-center">
@@ -40,7 +37,7 @@ function Tienda() {
         </Col>
         {/* Cards de productos */}
         <Col className="ms-4">
-          <Row xs={2} md={3} xl={3}>
+          <Row xs={2} md={3} lg={3} xl={4}>
             <ListCards CardsJson={CardsJson} />
           </Row>
         </Col>

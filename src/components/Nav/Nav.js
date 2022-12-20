@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import img from '../img/brand.png'
+import img from '../../assets/brand.png'
 import "./Nav.css"
 
 function NavbarBar() {

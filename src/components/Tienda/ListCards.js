@@ -5,7 +5,7 @@ function ListCards ({CardsJson}){
     return(
         CardsJson.map((e, key) => (
             <Col key={key} className="mt-4">
-              <Card className="Card">
+              <Card className='Card' categoria={e.categoria} marca={e.marca} talle={e.talle}>
                 <Card.Img className="CardImg" src={e.img} />
                 <Card.Body>
                   <Card.Title>{e.tittle}</Card.Title>

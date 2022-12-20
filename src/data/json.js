@@ -1,23 +1,27 @@
-import img from './img/img1.jpg'
+import img from '../assets/img1.jpg'
 
 const CardsJson = [
     {
         "id": 1,
         "tittle": "Card tittle",
         "precio": 500,
-        "img": img
+        "img": img,
+        "categoria":"Zapatilla",
+        "talle":"L"
     },
     {
         "id": 2,
         "tittle": "Card tittle",
         "precio": 500,
-        "img": img
+        "img": img,
+        "categoria":"Ojotas"
     },
     {
         "id": 3,
         "tittle": "Card tittle",
         "precio": 500,
-        "img": img
+        "img": img,
+        "marca":"Nike"
     },
     {
         "id": 4,

@@ -2,11 +2,10 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
 import ListGroup from "react-bootstrap/ListGroup";
-import { ListGroupJson } from "../json";
-
-function ModalTienda({ show, handleClose }) {
 
 
+
+function ModalTienda({ show, handleClose, ListGroupJson }) {
 
     return (
         <Modal
@@ -28,7 +27,7 @@ function ModalTienda({ show, handleClose }) {
                         <div className="scroll">
                             {Object.values(e[1])[0].map((e, key) => (
                                 <ListGroup.Item key={key} className="d-flex">
-                                    <InputGroup.Checkbox aria-label="Checkbox for following text input" />
+                                    <InputGroup.Checkbox  aria-label="Checkbox for following text input" />
                                     <p>{e}</p>
                                 </ListGroup.Item>
                             ))}

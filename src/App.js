@@ -1,12 +1,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import Tienda from "./Tienda";
-import Footer from "./Footer";
-import About from "./About"
-import Nav from "./Nav";
-import Contact from "./Contact"
+import Home from "./components/Home/Home";
+import Tienda from "./components/Tienda/Tienda";
+import Footer from "./components/Footer/Footer";
+import About from "./components/About/About"
+import Nav from "./components/Nav/Nav";
+import Contact from "./components/Contact/Contact"
 
 function App() {
   return (
