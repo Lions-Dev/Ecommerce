@@ -7,6 +7,7 @@ const CardsJson = [
         "precio": 500,
         "img": img,
         "categoria":"Zapatilla",
+        "marca":"Nike",
         "talle":"L"
     },
     {
@@ -14,62 +15,42 @@ const CardsJson = [
         "tittle": "Card tittle",
         "precio": 500,
         "img": img,
-        "categoria":"Ojotas"
+        "categoria":"Ojotas",
+        "marca":"Nike",
+        "talle":"S"
     },
     {
         "id": 3,
         "tittle": "Card tittle",
         "precio": 500,
         "img": img,
-        "marca":"Nike"
+        "categoria":"Ojotas",
+        "marca":"Nike",
+        "talle":"S"
     },
     {
         "id": 4,
         "tittle": "Card tittle",
         "precio": 500,
-        "img": img
+        "img": img,
+        "categoria":"Ojotas",
+        "marca":"Nike",
+        "talle":"S"
     },
     {
         "id": 5,
         "tittle": "Card tittle",
         "precio": 500,
-        "img": img
-    },
-    {
-        "id": 6,
-        "tittle": "Card tittle",
-        "precio": 500,
-        "img": img
-    },
-    {
-        "id": 7,
-        "tittle": "Card tittle",
-        "precio": 500,
-        "img": img
-    },
-    {
-        "id": 8,
-        "tittle": "Card tittle",
-        "precio": 500,
-        "img": img
-    },
-    {
-        "id": 9,
-        "tittle": "Card tittle",
-        "precio": 500,
-        "img": img
-    },
-    {
-        "id": 10,
-        "tittle": "Card tittle",
-        "precio": 500,
-        "img": img
-    }        
+        "img": img,
+        "categoria":"Ojotas",
+        "marca":"Nike",
+        "talle":"S"
+    }
 ]
 
 const ListGroupJson = [
     {
-        "Categoria": ["Zapatilla", "Botitas", "Ojotas","Zapatilla", "Botitas", "Ojotas"]
+        "Categoria": ["Zapatilla", "Botitas", "Ojotas"]
     },
     {
         "Marca": ["Nike", "Jordan", "Adidas"]

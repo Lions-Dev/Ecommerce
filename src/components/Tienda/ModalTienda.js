@@ -5,13 +5,13 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 
 
-function ModalTienda({ show, handleClose, ListGroupJson }) {
+function ModalTienda(props) {
 
     return (
         <Modal
             centered
-            show={show}
-            onHide={handleClose}
+            show={props.show}
+            onHide={props.handleClose}
             backdrop="static"
             keyboard={false}
         >
@@ -19,7 +19,7 @@ function ModalTienda({ show, handleClose, ListGroupJson }) {
                 <Modal.Title>Modal title</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                {Object.entries(ListGroupJson).map((e, key) => (
+                {Object.entries(props.ListGroupJson).map((e, key) => (
                     <ListGroup key={key}>
                         <ListGroup.Item>
                             <h5>{Object.keys(e[1])}</h5>
@@ -36,7 +36,7 @@ function ModalTienda({ show, handleClose, ListGroupJson }) {
                 ))}
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                <Button variant="secondary" onClick={props.handleClose}>
                     Cancelar
                 </Button>
                 <Button variant="primary">Aceptar</Button>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 import { CardsJson, ListGroupJson } from "../../data/json";
 import "./Tienda.css";
@@ -13,6 +13,22 @@ function Tienda() {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
+
+  const [checked, setChecked] = useState([]);
+  const handleChecked = (e) => {
+    let currentIndex = checked.indexOf(e)
+    let newChecked = [...checked]
+    if(currentIndex === -1){
+      newChecked.push(e)
+    } else {
+      newChecked.splice(currentIndex, 1)
+    }
+    setChecked(newChecked)
+  }; 
+  useEffect(() => {
+
+  },[checked])
+ 
 
   return (
 
@@ -31,14 +47,14 @@ function Tienda() {
         <Col id="ListGroupJson" className="ms-3 mt-3" xs={3} md={2} xl={2}>
           <Row>
             <Col>
-              <ListGroupFiltro ListGroupJson={ListGroupJson} />
+              <ListGroupFiltro ListGroupJson={ListGroupJson} handleChecked={handleChecked}/>
             </Col>
           </Row>
         </Col>
         {/* Cards de productos */}
         <Col className="ms-4">
           <Row xs={2} md={3} lg={3} xl={4}>
-            <ListCards CardsJson={CardsJson} />
+            <ListCards CardsJson={CardsJson} checked={checked} />
           </Row>
         </Col>
       </Row>
