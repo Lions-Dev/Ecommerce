@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import { CardsJson, ListGroupJson } from "../../data/json";
 import "./Tienda.css";
@@ -15,19 +15,18 @@ function Tienda() {
   const handleClose = () => setShow(false);
 
   const [checked, setChecked] = useState([]);
-  const handleChecked = (e) => {
-    let currentIndex = checked.indexOf(e)
+  const handleChecked = (e,titulo) => {
+    let currentIndex = checked.indexOf(titulo + ":" + e)
     let newChecked = [...checked]
     if(currentIndex === -1){
-      newChecked.push(e)
+      newChecked.push(titulo + ":" + e)
     } else {
       newChecked.splice(currentIndex, 1)
     }
+    
     setChecked(newChecked)
   }; 
-  useEffect(() => {
-
-  },[checked])
+  
  
 
   return (
