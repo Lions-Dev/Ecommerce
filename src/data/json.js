@@ -44,7 +44,7 @@ const CardsJson = [
         "img": img,
         "categoria":"Ojotas",
         "marca":"Nike",
-        "talle":"S"
+        "talle":"M"
     }
 ]
 

@@ -1,7 +1,7 @@
 import Card from "react-bootstrap/Card";
 import { Col } from "react-bootstrap";
 import { Fragment } from "react";
-import { useState } from "react";
+//import { useState } from "react";
 
 function ListCards(props) {
   const categoria = []
@@ -11,59 +11,132 @@ function ListCards(props) {
     const eDividido = e.split(":")
     switch (eDividido[0]) {
       case 'Categoria':
-        categoria.push(eDividido[1])
-        break
+        return categoria.push(eDividido[1])
       case 'Marca':
-        marca.push(eDividido[1])
-        break
+        return marca.push(eDividido[1])
       case 'Talle':
-        talle.push(eDividido[1])
-        break
+        return talle.push(eDividido[1])
+      default:
+        return null
     }
   })
-  console.log(categoria)
-  console.log(marca)
-  console.log(talle)
 
-  const a = props.CardsJson.map((CardJson, key) => {
-    return <Col key={key} className="mt-4">
-      <Card className='Card' data-categoria={CardJson.categoria} data-marca={CardJson.marca} data-talle={CardJson.talle}>
-        <Card.Img className="CardImg" src={CardJson.img} />
-        <Card.Body>
-          <Card.Title>{CardJson.tittle}</Card.Title>
-          <Card.Text>${CardJson.precio}</Card.Text>
-        </Card.Body>
-      </Card>
-    </Col>
+  const CardsJsonFiltrados = props.CardsJson.map((CardJson, key) => {
+    if (categoria.length > 0 && marca.length === 0 && talle.length === 0) { //Si solo esta lleno categoria entrara y pregunatara si coinciden con el dataset del cardjson
+      if (categoria.includes(CardJson.categoria)) {
+        return <Col key={key} className="mt-4">
+          <Card className='Card' data-categoria={CardJson.categoria} data-marca={CardJson.marca} data-talle={CardJson.talle}>
+            <Card.Img className="CardImg" src={CardJson.img} />
+            <Card.Body>
+              <Card.Title>{CardJson.tittle}</Card.Title>
+              <Card.Text>${CardJson.precio}</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      } else {
+        return null
+      }
+    } else if (marca.length > 0 && categoria.length === 0 && talle.length === 0) { //Si solo esta lleno marca
+      if (marca.includes(CardJson.marca)) {
+        return <Col key={key} className="mt-4">
+          <Card className='Card' data-categoria={CardJson.categoria} data-marca={CardJson.marca} data-talle={CardJson.talle}>
+            <Card.Img className="CardImg" src={CardJson.img} />
+            <Card.Body>
+              <Card.Title>{CardJson.tittle}</Card.Title>
+              <Card.Text>${CardJson.precio}</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      } else {
+        return null
+      }
+    } else if (talle.length > 0 && marca.length === 0 && categoria.length === 0) { //Si solo esta lleno talle
+      if (talle.includes(CardJson.talle)) {
+        return <Col key={key} className="mt-4">
+          <Card className='Card' data-categoria={CardJson.categoria} data-marca={CardJson.marca} data-talle={CardJson.talle}>
+            <Card.Img className="CardImg" src={CardJson.img} />
+            <Card.Body>
+              <Card.Title>{CardJson.tittle}</Card.Title>
+              <Card.Text>${CardJson.precio}</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      } else {
+        return null
+      }
+    } else if (categoria.length > 0 && marca.length > 0 && talle.length === 0) { //Si esta lleno categoria y marca
+      if (categoria.includes(CardJson.categoria) && marca.includes(CardJson.marca)) {
+        return <Col key={key} className="mt-4">
+          <Card className='Card' data-categoria={CardJson.categoria} data-marca={CardJson.marca} data-talle={CardJson.talle}>
+            <Card.Img className="CardImg" src={CardJson.img} />
+            <Card.Body>
+              <Card.Title>{CardJson.tittle}</Card.Title>
+              <Card.Text>${CardJson.precio}</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      } else {
+        return null
+      }
+    } else if (categoria.length > 0 && talle.length > 0 && marca.length === 0) { //Si esta lleno categoria y talle
+      if (categoria.includes(CardJson.categoria) && talle.includes(CardJson.talle)) {
+        return <Col key={key} className="mt-4">
+          <Card className='Card' data-categoria={CardJson.categoria} data-marca={CardJson.marca} data-talle={CardJson.talle}>
+            <Card.Img className="CardImg" src={CardJson.img} />
+            <Card.Body>
+              <Card.Title>{CardJson.tittle}</Card.Title>
+              <Card.Text>${CardJson.precio}</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      } else {
+        return null
+      }
+    } else if (talle.length > 0 && marca.length > 0 && categoria.length === 0) { //Si esta lleno talle y marca
+      if (talle.includes(CardJson.talle) && marca.includes(CardJson.marca)) {
+        return <Col key={key} className="mt-4">
+          <Card className='Card' data-categoria={CardJson.categoria} data-marca={CardJson.marca} data-talle={CardJson.talle}>
+            <Card.Img className="CardImg" src={CardJson.img} />
+            <Card.Body>
+              <Card.Title>{CardJson.tittle}</Card.Title>
+              <Card.Text>${CardJson.precio}</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      } else {
+        return null
+      }
+    } else if (talle.length > 0 && marca.length > 0 && categoria.length > 0) { //Si los tres estan llenos
+      if (talle.includes(CardJson.talle) && marca.includes(CardJson.marca) && categoria.includes(CardJson.categoria)) {
+        return <Col key={key} className="mt-4">
+          <Card className='Card' data-categoria={CardJson.categoria} data-marca={CardJson.marca} data-talle={CardJson.talle}>
+            <Card.Img className="CardImg" src={CardJson.img} />
+            <Card.Body>
+              <Card.Title>{CardJson.tittle}</Card.Title>
+              <Card.Text>${CardJson.precio}</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      } else {
+        return null
+      }
+    }
+    else { //Si no se da ninguna condicion se renderizara todos los cardjson
+      return <Col key={key} className="mt-4"> 
+          <Card className='Card' data-categoria={CardJson.categoria} data-marca={CardJson.marca} data-talle={CardJson.talle}>
+            <Card.Img className="CardImg" src={CardJson.img} />
+            <Card.Body>
+              <Card.Title>{CardJson.tittle}</Card.Title>
+              <Card.Text>${CardJson.precio}</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+    }
   })
-  // const [categoria,setCategoria] = useState([])
-  // const [marca,setMarca] = useState([])
-  // const [talle,setTalle] = useState([])
-  // props.checked.map(e => {
-  //   let checkedDividido = e.split(':')
-  //   switch (checkedDividido[0]){
-  //     case 'Categoria':
-  //       setCategoria(...categoria,(checkedDividido[1]))
-  //       break
-  //     case 'Marca':
-  //       setMarca(...marca,(checkedDividido[1]))
-  //       break
-  //     case 'Talle':
-  //       setTalle(...talle,(checkedDividido[1]))
-  //       break
-  //     default:
-  //   }
-  //   return null
-  // })
-  // console.log(categoria)
-  // console.log(marca)
-  // console.log(talle)
+
   return (
     <Fragment>
-
-
-      {a}
-
+      {CardsJsonFiltrados}
     </Fragment>
   )
 }
