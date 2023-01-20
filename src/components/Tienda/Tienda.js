@@ -11,7 +11,10 @@ import ListCards from "./ListCards";
 function Tienda() {
 
   const [show, setShow] = useState(false);
-  const handleShow = () => setShow(true);
+  const handleShow = () => {
+    setShow(true);
+    setChecked([])
+  }
   const handleClose = () => setShow(false);
 
   const [checked, setChecked] = useState([]);
@@ -23,7 +26,6 @@ function Tienda() {
     } else {
       newChecked.splice(currentIndex, 1)
     }
-    
     setChecked(newChecked)
   }; 
   
@@ -33,7 +35,7 @@ function Tienda() {
 
     <div className="tienda">
       {/* Modal */}
-      <ModalTienda show={show} handleClose={handleClose} ListGroupJson={ListGroupJson} />
+      <ModalTienda show={show} handleClose={handleClose} ListGroupJson={ListGroupJson} checked={checked} handleChecked={handleChecked}/>
       {/* Botones de filtro y ordenado */}
       <Row className="mt-5">
         <Col className="d-flex justify-content-center">

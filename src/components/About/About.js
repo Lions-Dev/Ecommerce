@@ -3,7 +3,7 @@ import { Row, Col, Container } from "react-bootstrap";
 
 function About() {
   return (
-    <div>
+    <>
       <Row xs={1} lg={2}>
         <Col id="backgroundAbout" className="d-flex justify-content-center">
           <span id="spanAbout" className="mt-4">
@@ -42,7 +42,7 @@ function About() {
           </div>
         </Col>
       </Row>
-    </div>
+      </>
   );
 }
 

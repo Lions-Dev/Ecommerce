@@ -1,7 +1,7 @@
 import Card from "react-bootstrap/Card";
 import { Col } from "react-bootstrap";
 import { Fragment } from "react";
-//import { useState } from "react";
+
 
 function ListCards(props) {
   const categoria = []
@@ -20,7 +20,9 @@ function ListCards(props) {
         return null
     }
   })
-
+  console.log(categoria)
+  console.log(marca)
+  console.log(talle)
   const CardsJsonFiltrados = props.CardsJson.map((CardJson, key) => {
     if (categoria.length > 0 && marca.length === 0 && talle.length === 0) { //Si solo esta lleno categoria entrara y pregunatara si coinciden con el dataset del cardjson
       if (categoria.includes(CardJson.categoria)) {

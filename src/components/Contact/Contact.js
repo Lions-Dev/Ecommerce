@@ -6,7 +6,7 @@ function Contact() {
   return (
     
     <Container className="mt-5">
-      <h2 className="d-flex justify-content-center">Contact Us</h2>  
+      <h1 className="d-flex justify-content-center">Contact Us</h1>  
       <Form className="mt-4">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>

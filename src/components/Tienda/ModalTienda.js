@@ -6,7 +6,23 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 
 function ModalTienda(props) {
-
+    const categoria = []
+    const marca = []
+    const talle = []
+    props.checked.map(e => {
+        const eDividido = e.split(":")
+        switch (eDividido[0]) {
+            case 'Categoria':
+                return categoria.push(eDividido[1])
+            case 'Marca':
+                return marca.push(eDividido[1])
+            case 'Talle':
+                return talle.push(eDividido[1])
+            default:
+                return null
+        }
+    })
+    
     return (
         <Modal
             centered
@@ -15,20 +31,20 @@ function ModalTienda(props) {
             backdrop="static"
             keyboard={false}
         >
-            <Modal.Header closeButton>
+            <Modal.Header >
                 <Modal.Title>Modal title</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                {Object.entries(props.ListGroupJson).map((e, key) => (
+                {Object.entries(props.ListGroupJson).map((titulo, key) => (
                     <ListGroup key={key}>
                         <ListGroup.Item>
-                            <h5>{Object.keys(e[1])}</h5>
+                            <h5>{Object.keys(titulo[1])}</h5>
                         </ListGroup.Item>
                         <div className="scroll">
-                            {Object.values(e[1])[0].map((e, key) => (
+                            {Object.values(titulo[1])[0].map((valor, key) => (
                                 <ListGroup.Item key={key} className="d-flex">
-                                    <InputGroup.Checkbox  aria-label="Checkbox for following text input" />
-                                    <p>{e}</p>
+                                    <InputGroup.Checkbox onChange={() => props.handleChecked(valor,Object.keys(titulo[1])[0])} aria-label="Checkbox for following text input" />
+                                    <p>{valor}</p>
                                 </ListGroup.Item>
                             ))}
                         </div>
@@ -39,7 +55,7 @@ function ModalTienda(props) {
                 <Button variant="secondary" onClick={props.handleClose}>
                     Cancelar
                 </Button>
-                <Button variant="primary">Aceptar</Button>
+                <Button variant="primary" onClick={props.handleClose}>Aceptar</Button>
             </Modal.Footer>
         </Modal>
     )
