@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.10182f6e.css",
-    "main.js": "/static/js/main.633948cd.js",
-    "static/media/img3.jpg": "/static/media/img3.7f3d83020d877e96329c.jpg",
-    "static/media/img2.jpg": "/static/media/img2.774125477f04bd98e756.jpg",
-    "static/media/img1.jpg": "/static/media/img1.7567318603651ff2d021.jpg",
-    "static/media/brand.png": "/static/media/brand.a6b06748b90c438ee194.png",
-    "static/media/backgroudZapatillas.jpg": "/static/media/backgroudZapatillas.46ba85d668b9f0da5995.jpg",
-    "index.html": "/index.html",
-    "main.10182f6e.css.map": "/static/css/main.10182f6e.css.map",
-    "main.633948cd.js.map": "/static/js/main.633948cd.js.map"
+    "main.css": "/Ecommerce/static/css/main.326d4547.css",
+    "main.js": "/Ecommerce/static/js/main.073f9e0b.js",
+    "static/media/img3.jpg": "/Ecommerce/static/media/img3.7f3d83020d877e96329c.jpg",
+    "static/media/img2.jpg": "/Ecommerce/static/media/img2.774125477f04bd98e756.jpg",
+    "static/media/img1.jpg": "/Ecommerce/static/media/img1.7567318603651ff2d021.jpg",
+    "static/media/brand.png": "/Ecommerce/static/media/brand.a6b06748b90c438ee194.png",
+    "static/media/backgroudZapatillas.jpg": "/Ecommerce/static/media/backgroudZapatillas.46ba85d668b9f0da5995.jpg",
+    "index.html": "/Ecommerce/index.html",
+    "main.326d4547.css.map": "/Ecommerce/static/css/main.326d4547.css.map",
+    "main.073f9e0b.js.map": "/Ecommerce/static/js/main.073f9e0b.js.map"
   },
   "entrypoints": [
-    "static/css/main.10182f6e.css",
-    "static/js/main.633948cd.js"
+    "static/css/main.326d4547.css",
+    "static/js/main.073f9e0b.js"
   ]
 }
